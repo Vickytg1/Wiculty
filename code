@@ -26,7 +26,7 @@ def draw_rectangle(color, width, height, x, y):
     man.goto(x, y)
     man.pendown()
     man.begin_fill()
-    for _ in range(2):
+    for in range(2):
         man.forward(width)
         man.right(90)
         man.forward(height)
@@ -84,3 +84,5 @@ man.forward(100)
 # Hide the turtle and display the result
 man.hideturtle()
 screen.mainloop()
+
+
