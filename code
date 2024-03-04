@@ -1,0 +1,86 @@
+import turtle
+
+# Set up the screen
+screen = turtle.Screen()
+screen.setup(width=600, height=600)
+screen.bgcolor("white")
+
+# Create a turtle
+man = turtle.Turtle()
+man.speed(0)  # Set the drawing speed to the fastest
+
+# Function to draw a circle
+def draw_circle(color, radius, x, y):
+    man.penup()
+    man.fillcolor(color)
+    man.goto(x, y)
+    man.pendown()
+    man.begin_fill()
+    man.circle(radius)
+    man.end_fill()
+
+# Function to draw a rectangle
+def draw_rectangle(color, width, height, x, y):
+    man.penup()
+    man.fillcolor(color)
+    man.goto(x, y)
+    man.pendown()
+    man.begin_fill()
+    for _ in range(2):
+        man.forward(width)
+        man.right(90)
+        man.forward(height)
+        man.right(90)
+    man.end_fill()
+
+# Draw face
+draw_circle("tan", 50, 0, -50)
+
+# Draw eyes
+draw_circle("black", 8, -20, -20)
+draw_circle("black", 8, 20, -20)
+
+# Draw nose
+man.penup()
+man.goto(0, -30)
+man.pendown()
+man.setheading(270)
+man.circle(15, 180)
+
+# Draw mouth
+man.penup()
+man.goto(-20, -40)
+man.pendown()
+man.setheading(270)
+man.circle(20, -180)
+
+# Draw body
+draw_rectangle("blue", 100, 150, -50, -100)
+
+# Draw arms
+man.penup()
+man.goto(-50, -70)
+man.pendown()
+man.setheading(135)
+man.forward(70)
+man.penup()
+man.goto(50, -70)
+man.pendown()
+man.setheading(45)
+man.forward(70)
+
+# Draw legs
+man.penup()
+man.goto(-35, -250)
+man.pendown()
+man.setheading(270)
+man.forward(100)
+man.penup()
+man.goto(35, -250)
+man.pendown()
+man.setheading(270)
+man.forward(100)
+
+# Hide the turtle and display the result
+man.hideturtle()
+screen.mainloop()
